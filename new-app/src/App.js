@@ -3,21 +3,14 @@ import './App.css';
 function App() {
   return (
     <>
-      <header>
+      <Header/>
 
-      </header>
+      <Nav/>
 
-      <nav>
+      <Main/>
 
-      </nav>
+      <Footer/>
 
-      <main>
-
-      </main>
-
-      <footer>
-        
-      </footer>
     </>
   );
 }
