@@ -1,0 +1,19 @@
+{
+  "name": "front-end-developer-capstone",
+  "version": "1.0.0",
+  "description": "This is just for practice while I am learning from the cousera meta course for Front-End-Developer-Capstone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaryamanVyas/Front-End-Developer-Capstone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AaryamanVyas/Front-End-Developer-Capstone/issues"
+  },
+  "homepage": "https://github.com/AaryamanVyas/Front-End-Developer-Capstone#readme"
+}
