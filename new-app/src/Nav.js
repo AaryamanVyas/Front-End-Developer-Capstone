@@ -8,6 +8,6 @@ function Nav() {
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    )
+    );
 }
-return default Nav;
+export default Nav;
