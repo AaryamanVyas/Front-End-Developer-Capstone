@@ -1,6 +1,7 @@
+import './App.css';
 function Nav() {
     return(
-        <nav>
+        <nav className='nav'>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
