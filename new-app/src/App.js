@@ -7,9 +7,10 @@ import Specials from './Specials';
 function App() {
   return (
     <>
+      <Nav/>
       <Header/>
 
-      <Nav/>
+      
 
       <Main/>
       <Specials/>

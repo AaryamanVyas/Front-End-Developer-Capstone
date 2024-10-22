@@ -115,7 +115,7 @@ span{
 }
 .nav ul li a{
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
 .nav ul li a:hover{
