@@ -1,3 +1,27 @@
+const specialsData = [
+    {
+      id: 1,
+      name: 'Greek Salad',
+      description: 'A fresh mix of lettuce, tomatoes, and cucumbers.',
+      price: '$12.99',
+      image: 'path-to-image1.jpg', // Replace with actual path
+    },
+    {
+      id: 2,
+      name: 'Bruschetta',
+      description: 'Grilled bread with garlic, tomatoes, and basil.',
+      price: '$9.99',
+      image: 'path-to-image2.jpg', // Replace with actual path
+    },
+    {
+      id: 3,
+      name: 'Lemon Dessert',
+      description: 'A tangy and sweet lemon dessert with a graham crust.',
+      price: '$5.00',
+      image: 'path-to-image3.jpg', // Replace with actual path
+    },
+  ];
+  
 function Specials() {
     return(
         <div className="specials">
