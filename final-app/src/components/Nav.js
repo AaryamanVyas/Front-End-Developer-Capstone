@@ -12,13 +12,13 @@ const Nav = () => {
             <a href='/' className='logo'>
                 <img src={logo} alt='logo'/>
             </a>
-            <div className='menu-icon'>
+            <div className='menu-icon' onClick={toggleMenu}>
                 <div className='bar'></div>
                 <div className='bar'></div>
                 <div className='bar'></div>
             </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
+            <ul className={`nav-links ${menuOpen ? "visible" : ""}`}>
+                <li><a href="/">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#Reservations">Reservations </a></li>
