@@ -1,11 +1,18 @@
 import logo from '../images/little_lemon.png'
-function Nav() {
+import React, {useState} from "react";
+
+const Nav = () => {
+    const [menuOpen, setMenuOpen]=useState(false);
+
+    const toggleMenu = () =>{
+        setMenuOpen(!menuOpen);
+    }
     return (
-        <nav className="nav">
+        <nav className={'navbar'}>
             <a href='/'>
                 <img src={logo} alt='logo'/>
             </a>
-            <div>
+            <div className='menu-icon'>
                 <div className='bar'></div>
                 <div className='bar'></div>
                 <div className='bar'></div>

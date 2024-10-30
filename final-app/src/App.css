@@ -4,3 +4,17 @@
   background-color: black;
   margin: 5px 0;
 }
+nav ul li {
+  display: inline-block;
+  padding: 1em;
+}
+.navbar {
+  padding: 10px 13%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-icon{
+  display: none;
+  cursor: pointer;
+}
