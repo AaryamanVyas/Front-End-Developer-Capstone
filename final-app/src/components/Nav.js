@@ -8,8 +8,8 @@ const Nav = () => {
         setMenuOpen(!menuOpen);
     }
     return (
-        <nav className={'navbar'}>
-            <a href='/'>
+        <nav className={`navbar ${menuOpen ? "open" : ""}`}>
+            <a href='/' className='logo'>
                 <img src={logo} alt='logo'/>
             </a>
             <div className='menu-icon'>
