@@ -1,6 +1,6 @@
 import logo from '../images/little_lemon.png'
 import React, {useState} from "react";
-
+import { Link } from 'react-router-dom';
 const Nav = () => {
     const [menuOpen, setMenuOpen]=useState(false);
 
@@ -18,13 +18,13 @@ const Nav = () => {
                 <div className='bar'></div>
             </div>
             <ul className={`nav-links ${menuOpen ? "visible" : ""}`}>
-                <li><a href="/">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#Reservations">Reservations </a></li>
-                <li><a href="#order-online">Order Online</a> </li>
-                <li><a href="#login">Login Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/menu">Menu</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/booking">Reservations</Link></li>
+                <li><Link to="/order-online">Order Online</Link></li>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
         </nav>
     )

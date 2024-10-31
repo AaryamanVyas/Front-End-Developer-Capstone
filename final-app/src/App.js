@@ -8,9 +8,9 @@ function App() {
     <>
       <Nav />
       <Header />
-      {/* <Routes>
+      <Routes>
         <Route path='/booking' element={<BookingPage/>} />
-      </Routes> */}
+      </Routes>
     </>
   );
 }
