@@ -1,7 +1,7 @@
 import './App.css';
 import Nav from './components/Nav'
 import Header from './components/Header';
-import BookingPage from './components/Booking';
+import BookingPage from './components/BookingPage';
 import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/booking' element={<BookingPage/>} />
       </Routes>
+      {/* <BookingForm/> */}
     </>
   );
 }
