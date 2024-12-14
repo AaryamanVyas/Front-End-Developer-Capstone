@@ -1,29 +1,44 @@
 import React, { useReducer, useEffect } from "react";
 import BookingPage from "./BookingPage";
-import { fetchAPI } from './api'; // Import the local API functions
+import { fetchAPI, submitAPI } from './api'; // Import submitAPI function
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
-// Function to initialize available times
 const initializeTimes = () => {
-  const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
-  return fetchAPI(today); // Call the API for today's available times
+    const today = new Date().toISOString().split('T')[0]; 
+    return fetchAPI(today);
+  };
+  
+  const updateTimes = (state, action) => {
+    if (action.type === "UPDATE_TIMES") {
+      return fetchAPI(action.payload);
+    }
+    return state;
+  };
+  
+  const Main = () => {
+    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+    const navigate = useNavigate(); 
+  
+    // ✅ Make sure submitForm is defined properly
+    const submitForm = (formData) => {
+      const success = submitAPI(formData);
+      if (success) {
+        navigate('/booking-confirmed'); 
+      } else {
+        alert('Booking failed. Please try again.');
+      }
+    };
+  
+    // ✅ Pass submitForm to BookingPage
+    return (
+      <div>
+        <BookingPage 
+          availableTimes={availableTimes} 
+          setAvailableTimes={dispatch} 
+          submitForm={submitForm} 
+        />
+      </div>
+    );
 };
-
-// Reducer function to update available times
-const updateTimes = (state, action) => {
-  if (action.type === "UPDATE_TIMES") {
-    return fetchAPI(action.payload); // Call the API for the new date's available times
-  }
-  return state;
-};
-
-const Main = () => {
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
-
-  return (
-    <div>
-      <BookingPage availableTimes={availableTimes} setAvailableTimes={dispatch} />
-    </div>
-  );
-};
-
+  
 export default Main;
