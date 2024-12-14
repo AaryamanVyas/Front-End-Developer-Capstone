@@ -1,16 +1,17 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import BookingPage from "./BookingPage";
+import { fetchAPI } from './api'; // Import the local API functions
 
 // Function to initialize available times
 const initializeTimes = () => {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+  return fetchAPI(today); // Call the API for today's available times
 };
 
 // Reducer function to update available times
 const updateTimes = (state, action) => {
   if (action.type === "UPDATE_TIMES") {
-    // For now, return the same times regardless of the date
-    return initializeTimes();
+    return fetchAPI(action.payload); // Call the API for the new date's available times
   }
   return state;
 };
@@ -26,6 +27,3 @@ const Main = () => {
 };
 
 export default Main;
-
-
-
