@@ -16,7 +16,7 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
     e.preventDefault();
     const formData = { date, time, guests, occasion };
     if (typeof submitForm === 'function') {
-      submitForm(formData); // ✅ Call the submitForm function from props
+      submitForm(formData);
     } else {
       console.error('submitForm is not a function');
     }
