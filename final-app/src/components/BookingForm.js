@@ -10,15 +10,14 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
   // Validation function
   const validate = () => {
     const newError = {};
-    if (!date) newError.date = "date is required";
-    if (!time) newError.time = "time is required";
-    if (guests < 1 || guests > 10) newError.guests = "guests must be between 1 and 10";
-    if (!occasion) newError.occasion = "please select an occasion";
+    if (!date) newError.date = "Date is required";
+    if (!time) newError.time = "Time is required";
+    if (guests < 1 || guests > 10) newError.guests = "Guests must be between 1 and 10";
+    if (!occasion) newError.occasion = "Please select an occasion";
     setError(newError);
-    return Object.keys(newError).length === 0; // Returns true if no errors
+    return Object.keys(newError).length === 0;
   };
 
-  // Handle field blur to remove individual error
   const handleBlur = (field) => {
     setError((prevErrors) => {
       const newErrors = { ...prevErrors };
@@ -30,12 +29,11 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
     });
   };
 
-  // Handle date change, trigger validation, and update available times
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
     setDate(selectedDate);
     setAvailableTimes({ type: "UPDATE_TIMES", payload: selectedDate });
-    validate(); // Revalidate form after date selection
+    validate();
   };
 
   const handleSubmit = (e) => {
@@ -51,71 +49,101 @@ const BookingForm = ({ availableTimes, setAvailableTimes, submitForm }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
-      <label htmlFor="res-date">Choose date</label>
-      <input 
-        type="date" 
-        id="res-date" 
-        value={date} 
-        onChange={handleDateChange} 
-        onBlur={() => handleBlur("date")} // Trigger onBlur for date field
-      />
-      {errors.date && <span style={{ color: "red" }}>{errors.date}</span>}
+    <form
+      onSubmit={handleSubmit}
+      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+      aria-labelledby="booking-form-title"
+    >
+      <fieldset>
+        <legend id="booking-form-title">Make a Reservation</legend>
 
-      <label htmlFor="res-time">Choose time</label>
-      <select
-        id="res-time"
-        value={time}
-        onChange={(e) => {
-          setTime(e.target.value);
-          validate(); // Validate after time change
-        }}
-        onBlur={() => handleBlur("time")} // Trigger onBlur for time field
-      >
-        <option value="">Select Time</option>
-        {availableTimes.map((t) => (
-          <option key={t} value={t}>
-            {t}
-          </option>
-        ))}
-      </select>
-      {errors.time && <span style={{ color: "red" }}>{errors.time}</span>}
+        <label htmlFor="res-date">Choose date</label>
+        <input
+          type="date"
+          id="res-date"
+          value={date}
+          onChange={handleDateChange}
+          onBlur={() => handleBlur("date")}
+          aria-describedby="date-error"
+          aria-invalid={errors.date ? "true" : "false"}
+        />
+        {errors.date && (
+          <span id="date-error" style={{ color: "red" }} aria-live="assertive">
+            {errors.date}
+          </span>
+        )}
 
-      <label htmlFor="guests">Number of guests</label>
-      <input 
-        type="number" 
-        min="1" 
-        max="10" 
-        id="guests" 
-        value={guests} 
-        onChange={(e) => {
-          setGuests(Number(e.target.value));
-          validate(); // Validate after guests change
-        }}
-        onBlur={() => handleBlur("guests")} // Trigger onBlur for guests field
-      />
-      {errors.guests && <span style={{ color: "red" }}>{errors.guests}</span>}
+        <label htmlFor="res-time">Choose time</label>
+        <select
+          id="res-time"
+          value={time}
+          onChange={(e) => {
+            setTime(e.target.value);
+            validate();
+          }}
+          onBlur={() => handleBlur("time")}
+          aria-describedby="time-error"
+          aria-invalid={errors.time ? "true" : "false"}
+        >
+          <option value="">Select Time</option>
+          {availableTimes.map((t) => (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          ))}
+        </select>
+        {errors.time && (
+          <span id="time-error" style={{ color: "red" }} aria-live="assertive">
+            {errors.time}
+          </span>
+        )}
 
-      <label htmlFor="occasion">Occasion</label>
-      <select 
-        id="occasion" 
-        value={occasion} 
-        onChange={(e) => {
-          setOccasion(e.target.value);
-          validate(); // Validate after occasion change
-        }}
-        onBlur={() => handleBlur("occasion")} // Trigger onBlur for occasion field
-      >
-        <option>Birthday</option>
-        <option>Anniversary</option>
-      </select>
-      {errors.occasion && <span style={{ color: "red" }}>{errors.occasion}</span>}
+        <label htmlFor="guests">Number of guests</label>
+        <input
+          type="number"
+          min="1"
+          max="10"
+          id="guests"
+          value={guests}
+          onChange={(e) => {
+            setGuests(Number(e.target.value));
+            validate();
+          }}
+          onBlur={() => handleBlur("guests")}
+          aria-describedby="guests-error"
+          aria-invalid={errors.guests ? "true" : "false"}
+        />
+        {errors.guests && (
+          <span id="guests-error" style={{ color: "red" }} aria-live="assertive">
+            {errors.guests}
+          </span>
+        )}
 
-      <input 
-        type="submit" 
-        value="Make Your reservation" 
-        disabled={Object.keys(errors).length > 0} 
-      />
+        <label htmlFor="occasion">Occasion</label>
+        <select
+          id="occasion"
+          value={occasion}
+          onChange={(e) => {
+            setOccasion(e.target.value);
+            validate();
+          }}
+          onBlur={() => handleBlur("occasion")}
+          aria-describedby="occasion-error"
+          aria-invalid={errors.occasion ? "true" : "false"}
+        >
+          <option value="Birthday">Birthday</option>
+          <option value="Anniversary">Anniversary</option>
+        </select>
+        {errors.occasion && (
+          <span id="occasion-error" style={{ color: "red" }} aria-live="assertive">
+            {errors.occasion}
+          </span>
+        )}
+
+        <button type="submit" aria-label="Make Your Reservation"> 
+          Make Your Reservation
+        </button>
+      </fieldset>
     </form>
   );
 };

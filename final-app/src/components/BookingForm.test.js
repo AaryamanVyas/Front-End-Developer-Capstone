@@ -1,4 +1,5 @@
-import { render, screen, fireEvent, act } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { act } from "react";
 import BookingForm from "./BookingForm";
 
 describe("BookingForm", () => {
