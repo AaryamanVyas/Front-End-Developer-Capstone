@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import { act } from "react";
 import BookingForm from "./BookingForm";
-import { act } from "react"; // Use act from react instead of react-dom/test-utils
 
 test("Renders the BookingForm heading", () => {
     const availableTimes = ["17:00", "18:00", "19:00"]; // Mock available times
