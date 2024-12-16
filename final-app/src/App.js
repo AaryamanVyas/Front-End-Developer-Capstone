@@ -5,7 +5,7 @@ import BookingPage from './components/BookingPage';
 import ConfirmedBooking from './components/ConfirmedBooking';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Main from './components/Main';
-
+import Menu from './components/Menu';
 function App() {
   const location = useLocation();
 
@@ -20,6 +20,7 @@ function App() {
         <Route path="/login" element={<div>Login Page</div>} />
         <Route path="/contact" element={<div>Contact Page</div>} />
       </Routes>
+      <Menu/>
     </>
   );
 }
