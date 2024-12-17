@@ -1,27 +1,17 @@
 # Front-End-Developer-Capstone
 Little Lemon Restaurant - React Web App
-Welcome to Little Lemon Restaurant, a modern, responsive single-page application built with React.js and React Router. This project showcases a Mediterranean restaurant's homepage with smooth navigation, multiple sections, and reservation functionality.
-
-Table of Contents
 Overview
-Features
-Installation
-Technologies Used
-Screenshots/videos
-License
-Contact
-Overview
-The Little Lemon Restaurant project is a responsive React web app designed to offer a clean user experience for a restaurant website. It features smooth scrolling navigation, dedicated sections like "About Us," "Menu," and "Contact Us," and includes a Reservations page for booking tables.
+Little Lemon Restaurant is a modern, responsive single-page application built with React.js and React Router. The website showcases a Mediterranean restaurant with smooth navigation, multiple sections, and a reservation functionality.
 
 Features
 Responsive Design: Fully responsive layout for desktop and mobile devices.
-Smooth Navigation: Scrolls to specific sections (Home, Menu, About Us, Contact Us) when clicking links.
-Dynamic Routing: Utilizes React Router for navigating between pages such as Reservations and Booking Confirmation.
-Reusable Components: Modular components for the header, navigation bar, footer, and other sections.
-Custom Navigation: Mobile-friendly navigation menu with a hamburger icon for smaller screens.
-Reservation System: Dedicated "Reservations" page for booking a table.
+Smooth Navigation: Smooth scrolling to specific sections (Home, Menu, About Us, Contact Us).
+Dynamic Routing: React Router for page navigation, including Reservations and Booking Confirmation.
+Reusable Components: Modular components for the header, navigation bar, footer, etc.
+Mobile-Friendly Navigation: Hamburger icon for compact mobile navigation.
+Reservation System: A dedicated "Reservations" page for table bookings.
 Installation
-Follow these steps to get the project up and running locally:
+To run the project locally, follow these steps:
 
 Clone the Repository:
 
@@ -33,33 +23,25 @@ Navigate to the Project Folder:
 bash
 Copy code
 cd final-app
-Install Dependencies: Use npm or yarn to install the required packages:
+Install Dependencies: Use npm or yarn to install required packages:
 
 bash
 Copy code
-npm install
-or
-
-bash
-Copy code
+npm install  # OR
 yarn install
 Run the Application: Start the development server:
 
 bash
 Copy code
-npm start
-or
-
-bash
-Copy code
+npm start  # OR
 yarn start
-Open in Browser: Open http://localhost:3000 in your browser to view the app.
+Open in Browser: Open http://localhost:3000 to view the app.
 
-
+Technologies Used
 React.js: Core front-end library.
 React Router DOM: For client-side routing.
-CSS: Custom CSS for styling the UI.
-JavaScript (ES6+): For component logic.
+CSS: Custom styles for the UI.
+JavaScript (ES6+): Component logic and functionality.
 HTML5: Structure and semantics.
 npm/Yarn: Package management.
 
@@ -73,13 +55,6 @@ Screenshots
 
 
 https://github.com/user-attachments/assets/df96476a-a132-445a-b86e-b1f22213e0af
-
-
-Homepage
-
-Responsive Navigation
-
-Reservations Page
 
 License
 This project is licensed under the MIT License.
