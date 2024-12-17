@@ -6,7 +6,6 @@ Table of Contents
 Overview
 Features
 Installation
-Project Structure
 Technologies Used
 Screenshots/videos
 License
@@ -56,32 +55,6 @@ Copy code
 yarn start
 Open in Browser: Open http://localhost:3000 in your browser to view the app.
 
-Project Structure
-The project follows a modular React structure:
-
-less
-Copy code
-front-end-developer-capstone/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── Nav.js        // Navigation bar
-│   │   ├── Header.js     // Header (Hero section)
-│   │   ├── Footer.js     // Footer section
-│   │   ├── Main.js       // Reservations page
-│   │   ├── AboutUs.js    // About Us section
-│   │   ├── Menu.js       // Menu section
-│   │   └── ConfirmedBooking.js // Confirmation page
-│   ├── images/
-│   │   └── little_lemon.png
-│   ├── App.js            // Main App component
-│   ├── App.css           // Global styles
-│   └── index.js          // React entry point
-├── package.json
-└── README.md
-Technologies Used
-The following technologies were used to develop this project:
 
 React.js: Core front-end library.
 React Router DOM: For client-side routing.
