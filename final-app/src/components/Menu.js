@@ -1,6 +1,22 @@
 import React from "react";
 import recipes from "../recipes";
+import Swal from "sweetalert2";
 const Menu = () =>{
+    const handleOrder = (id) => {
+        Swal.fire({
+          title: "are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, order it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire("Ordered", "Your Order has been processing.", "success");
+          }
+        });
+    };
     return (
         <div className="menu-container">
             <div>
@@ -17,7 +33,7 @@ const Menu = () =>{
                                 <p>{recipe.price}</p>
                             </div>
                             <p>{recipe.description}</p>
-                            <button className="orderBtn">Order now</button>
+                            <button className="orderBtn" onClick={()=>handleOrder(recipe.id)}>Order now</button>
                         </div>
                     </div>)
                 }
