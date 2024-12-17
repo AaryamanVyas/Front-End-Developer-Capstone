@@ -59,7 +59,7 @@ function App() {
 
       {/* Footer with ref */}
       <div ref={footerRef}>
-        <Footer />
+      <Footer scrollToSection={scrollToSection} refs={{ homeRef, menuRef, aboutRef, footerRef }} />
       </div>
     </>
   );
