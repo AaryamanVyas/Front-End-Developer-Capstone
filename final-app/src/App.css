@@ -237,44 +237,83 @@ button:hover {
   align-items: center;
   flex-wrap: wrap;
 }
-.cards{
+/* Cards Container */
+.cards {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch; /* Makes cards stretch to the same height */
   flex-wrap: wrap;
-  gap: 2rem 1rem;
+  gap: 2rem 1rem; /* Maintain spacing between cards */
 }
 
-.menu-items{
-  /* height: 400px; */
-  width: 350px;
+/* Individual Menu Item */
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content and buttons align */
+  height: 500px; /* Fixed height for all cards */
+  width: 350px; /* Fixed width */
   background: #a9c8be;
   border-radius: 8px;
+  overflow: hidden; /* Ensure no content spills out */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetics */
+  text-align: center;
 }
 
-.menu-container img{
+/* Image Styling */
+.menu-items img {
   width: 100%;
-  height: 233px;
-  border-radius: 8px;
+  height: 50%; /* Fix the image height to half of the card */
+  object-fit: cover; /* Ensures the image scales and crops properly */
 }
 
-.menu-content{
-  padding: 5px 15px;
+/* Menu Content */
+.menu-contents {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Align text and button properly */
+  flex-grow: 1; /* Pushes content evenly */
 }
 
-
-.menu-content .heading{
+/* Menu Item Heading */
+.menu-contents .heading {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.orderbtn{
-  padding: 5px 12px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 600;
+.menu-contents h5 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
 }
+
+.menu-contents p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Order Button */
+.orderBtn {
+  margin-top: auto; /* Push button to the bottom */
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f4ce14;
+  border: none;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.orderBtn:hover {
+  background-color: #e0b914;
+}
+
 
 footer section{
   padding: 10px 13%;
