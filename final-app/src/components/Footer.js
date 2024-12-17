@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../images/little_lemon.png";
+
 const Footer = () => {
   return (
     <footer>
@@ -7,8 +8,8 @@ const Footer = () => {
         <div className="company-info">
           <img src={logo} alt="company-image" />
           <p>
-            We are a family owned Mediterraneran restuarant, focused on
-            traditional recipes servred with a modern twist{" "}
+            We are a family-owned Mediterranean restaurant, focused on
+            traditional recipes served with a modern twist.
           </p>
         </div>
         <div>
@@ -21,19 +22,16 @@ const Footer = () => {
               <Link to="/">About</Link>
             </li>
             <li>
-              <Link to="/">Reservations</Link>
+              <Link to="/booking">Reservations</Link>
             </li>
             <li>
               <Link to="/">Order Online</Link>
-            </li>
-            <li>
-              <Link to="/">Login</Link>
             </li>
           </ul>
         </div>
 
         <div>
-          <h3>Contact us</h3>
+          <h3>Contact Us</h3>
           <ul>
             <li>
               Address : <br /> Towncity USA
@@ -57,7 +55,7 @@ const Footer = () => {
               <a href="/">Instagram</a>
             </li>
             <li>
-              <a href="/">Youtube</a>
+              <a href="/">YouTube</a>
             </li>
           </ul>
         </div>

@@ -373,3 +373,16 @@ footer ul li{
 html {
   scroll-behavior: smooth;
 }
+.nav-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.nav-button:hover {
+  color: #f4ce14; /* Add hover effect */
+}
