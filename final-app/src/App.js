@@ -6,6 +6,8 @@ import ConfirmedBooking from './components/ConfirmedBooking';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Main from './components/Main';
 import Menu from './components/Menu';
+import Footer from './components/Footer';
+import AboutUs from './components/AboutUs';
 function App() {
   const location = useLocation();
 
@@ -21,6 +23,8 @@ function App() {
         <Route path="/contact" element={<div>Contact Page</div>} />
       </Routes>
       <Menu/>
+      <AboutUs/>
+      <Footer/>
     </>
   );
 }

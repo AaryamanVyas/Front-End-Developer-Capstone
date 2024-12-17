@@ -370,3 +370,6 @@ footer ul li{
 .hidden{
   display: none;
 }
+html {
+  scroll-behavior: smooth;
+}
